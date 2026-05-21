@@ -49,16 +49,16 @@ services:
     ports:
       - "8080:8080"
 
-  mail-worker:
-    build:
-      context: ./go
-      dockerfile: Dockerfile
-    container_name: go_worker
-    command: ./worker-bin
-    restart: always
-    depends_on:
-      - rabbitmq
-    env_file: .env
+  # mail-worker:
+  #   build:
+  #     context: ./go
+  #     dockerfile: Dockerfile
+  #   container_name: go_worker
+  #   command: ./worker-bin
+  #   restart: always
+  #   depends_on:
+  #     - rabbitmq
+  #   env_file: .env
 
   # --- DATA SCRAPER (PYTHON) ---
   scraper:
